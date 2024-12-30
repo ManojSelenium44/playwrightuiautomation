@@ -1,0 +1,27 @@
+
+
+{
+  "name": "playwright-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "if not exist test-results\\reports mkdir test-results\\reports",
+    "test": "cucumber-js --require-module ts-node/register --require src/test/steps/**/*.ts --require src/hooks/**/*.ts --format json:./test-results/reports/cucumber_report.json",
+    "report": "cucumber-html-reporter --theme bootstrap --jsonFile ./test-results/reports/cucumber_report.json --output ./test-results/reports/cucumber_report.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.46.1",
+    "cucumber-html-reporter": "^5.5.1",
+    "playwright": "^1.46.1",
+    "playwright-new": "file:",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "@types/node": "^16.18.105",
+    "typescript": "^5.5.4"
+  }
+}
